@@ -4,35 +4,37 @@ CREATE TABLE recipes (
 	id INT NOT NULL AUTO_INCREMENT,
     recipe_name VARCHAR(500),
     chef_name VARCHAR(200),
-    restaurant_name VARCHAR(500),
-    cuisine_type VARCHAR(500),
-    course_type VARCHAR(500),
+    restaurant_name VARCHAR(300),
+    cuisine_type VARCHAR(100),
+    course_type VARCHAR(100),
 	cooking_instructions VARCHAR(3000),
     PRIMARY KEY (id)
 );
 
-CREATE TABLE allergen_info (
+CREATE TABLE allergens (
 	recipe_id INT NOT NULL,
-	allergen_name VARCHAR(100),
-    has_allergen BOOLEAN NOT NULL DEFAULT 0,
-    PRIMARY KEY (recipe_id)
-);
-
-CREATE TABLE allergen_list (
-	recipes_id INT NOT NULL,
-    allergen_name VARCHAR(1000),
-    PRIMARY KEY (recipes_id, allergen_name)
+	gluten BOOLEAN NOT NULL DEFAULT 0,
+    shellfish BOOLEAN NOT NULL DEFAULT 0,
+    peanuts BOOLEAN NOT NULL DEFAULT 0,
+    nuts_other BOOLEAN NOT NULL DEFAULT 0,
+    dairy BOOLEAN NOT NULL DEFAULT 0,
+    eggs BOOLEAN NOT NULL DEFAULT 0
 );
 
 CREATE TABLE ingredient_info (
 	recipe_id INT NOT NULL,
 	ingredient_name VARCHAR(100),
-    ingredient_quantity VARCHAR(100),
-    PRIMARY KEY (recipe_id)
+    ingredient_quantity VARCHAR(50)
 );
 
 CREATE TABLE ingredient_list (
 	recipes_id INT NOT NULL,
-    ingredient_name VARCHAR(2000),
-    PRIMARY KEY (recipes_id, ingredient_name)
+    ingredient_name VARCHAR(100)
 );
+
+SELECT r.*, ai.*
+FROM recipes r
+INNER JOIN allergen_list al
+ON al.recipes_id = r.id
+INNER JOIN allergen_info ai
+ON ai.recipe_id = al.recipes_id
