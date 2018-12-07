@@ -8,6 +8,7 @@ CREATE TABLE recipes (
     cuisine_type VARCHAR(100),
     course_type VARCHAR(100),
 	cooking_instructions VARCHAR(3000),
+    privacy BOOLEAN NOT NULL DEFAULT 0,
     PRIMARY KEY (id)
 );
 
@@ -21,20 +22,9 @@ CREATE TABLE allergens (
     eggs BOOLEAN NOT NULL DEFAULT 0
 );
 
-CREATE TABLE ingredient_info (
-	recipe_id INT NOT NULL,
-	ingredient_name VARCHAR(100),
-    ingredient_quantity VARCHAR(50)
-);
-
 CREATE TABLE ingredient_list (
 	recipes_id INT NOT NULL,
-    ingredient_name VARCHAR(100)
+    ingredient_name VARCHAR(100),
+    ingredient_quantity VARCHAR(50),
+    ingredient_measure VARCHAR(50)
 );
-
-SELECT r.*, ai.*
-FROM recipes r
-INNER JOIN allergen_list al
-ON al.recipes_id = r.id
-INNER JOIN allergen_info ai
-ON ai.recipe_id = al.recipes_id
