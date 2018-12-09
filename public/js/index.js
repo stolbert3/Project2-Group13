@@ -1,5 +1,5 @@
 
-// Get references to page elements and set variables for all idvidual data that needs to be stored
+// Get references to page elements and set variables for all individual data that needs to be stored
 var allergyGluten = $("#gluten");
 var allergyShellfish = $("#shellfish");
 var allergyPeanuts = $("#peanuts");
@@ -7,7 +7,8 @@ var allergyNutsOther = $("#nutsOther");
 var allergydairy = $("#dairy");
 var allergyEggs = $("#eggs");
 var cuisineType = $("#cuisineType");
-var courseType = $("#courseType")
+var courseType = $("#courseType");
+var dishName = $("#dishName");
 var recipeIngredient = $("#textAreaIngredient");
 var recipeAmount = $("#textAreaAmount");
 var measureSolids = $("#measureSolids");

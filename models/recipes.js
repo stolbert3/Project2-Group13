@@ -9,5 +9,14 @@ module.exports = function(sequelize, DataTypes) {
     cooking_instructions: DataTypes.STRING,
     privacy: DataTypes.BOOLEAN
   });
+
+
+  Recipes.associate = function(models) {
+    Recipes.belongsTo(models.Users, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
+  };
   return Recipes;
 };

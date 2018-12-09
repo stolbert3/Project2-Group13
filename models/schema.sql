@@ -28,3 +28,10 @@ CREATE TABLE ingredient_list (
     ingredient_quantity VARCHAR(50),
     ingredient_measure VARCHAR(50)
 );
+
+CREATE TABLE users (
+	username VARCHAR(100),
+    password VARCHAR(100),
+    name VARCHAR(100),
+    restaurant VARCHAR(100)
+);
