@@ -5,5 +5,13 @@ module.exports = function(sequelize, DataTypes) {
     ingredient_quantity: DataTypes.STRING,
     ingredient_measure: DataTypes.STRING
   });
+
+  Ingredients.associate = function(models) {
+    Ingredients.belongsTo(models.Recipes, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
+  };
   return Ingredients;
 };

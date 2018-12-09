@@ -13,7 +13,7 @@ CREATE TABLE recipes (
 );
 
 CREATE TABLE allergens (
-	recipe_id INT NOT NULL,
+	id INT NOT NULL,
 	gluten BOOLEAN NOT NULL DEFAULT 0,
     shellfish BOOLEAN NOT NULL DEFAULT 0,
     peanuts BOOLEAN NOT NULL DEFAULT 0,
@@ -23,7 +23,7 @@ CREATE TABLE allergens (
 );
 
 CREATE TABLE ingredient_list (
-	recipes_id INT NOT NULL,
+	id INT NOT NULL,
     ingredient_name VARCHAR(100),
     ingredient_quantity VARCHAR(50),
     ingredient_measure VARCHAR(50)
