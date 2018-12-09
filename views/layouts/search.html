@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe - Submit</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="/styles.css" media="screen" title="no title">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <script> $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+
+
+    <body>
+
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s3">
+                        <img src="../images/plate_image.jpeg" alt="" class="">
+                        <!-- notice the "circle" class -->
+                    </div>
+                    <div class="col s10">
+                        <span class="black-text">
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <form class="col s6">
+                <h6>Select Food Allergies in Dish</h6>
+
+                <form action="#">
+                    <p>
+
+                        <label>
+                            <input id="gluten" type="checkbox" />
+                            <span>Gluten</span>
+                        </label>
+                        <br>
+                        <label>
+                            <input id="shellfish" type="checkbox" />
+                            <span>Shellfish</span>
+                        </label>
+                        <br>
+                        <label>
+                            <input id="peanuts" type="checkbox" />
+                            <span>Peanuts</span>
+                        </label>
+                        <br>
+                        <label>
+                            <input id="nutsOther" type="checkbox" />
+                            <span>Nuts - Other</span>
+                        </label>
+                        <br>
+                        <label>
+                            <input id="dairy" type="checkbox" />
+                            <span>Dairy</span>
+                        </label>
+                        <br>
+                        <label>
+                            <input id="eggs" type="checkbox" />
+                            <span>Eggs</span>
+                        </label>
+                    </p>
+                </form>
+        </div>
+
+
+
+        <div class="row">
+            <div class="input-field col s6">
+                <select id="cuisineType">
+                    <option value="" disabled selected>Select Style of Cuisine</option>
+                    <option value="thai">Thai</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="indian">Indian</option>
+                    <option value="french">French</opption>
+                        <option value="ethiopian">Ethiopian</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="greek">Greek</option>
+                        <option Value="italian">Italian</option>
+                </select>
+                <label>Select Style of Cuisine</label>
+            </div>
+        </div>
+
+
+
+
+
+        <a class="waves-effect waves-light btn-large">Search</a>
+
+        <!-- Custom Script -->
+
+        <script src="" type="text/javascript"></script>
+
+    </body>
+
+</html>
