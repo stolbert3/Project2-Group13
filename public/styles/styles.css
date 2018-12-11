@@ -37,7 +37,7 @@ p, .card-title, .card-action {
 }
 
 .row{
-  padding:10px;
+  padding:20px;
 }
 
 .page-footer{
@@ -49,4 +49,14 @@ p, .card-title, .card-action {
 #publishBtn, #searchBtn, #searchPageBtn, #add-button  {
   background-color: 	#7B7575;
  
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
