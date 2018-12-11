@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Recipe - Search</title>
+    <title>Family Meal - Search</title>
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -12,6 +12,8 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Eczar|Roboto" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +31,7 @@
                     <div class="col s12 m6">
                         <div class="card white-grey darken-10" style="padding:20px">
                             <div class="row">
-                                <form id="allergy_row" class="col s6">
+                                <div id="allergy_row" class="col s6">
                                     <h6>Allergens</h6>
 
                                     <form action="#">
@@ -66,67 +68,74 @@
                                             </label>
                                         </p>
                                     </form>
-                            </div>
-
-
-
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <select id="cuisineType">
-                                        <option value="" disabled selected>Select Cuisine Style</option>
-                                        <option value="thai">Thai</option>
-                                        <option value="chinese">Chinese</option>
-                                        <option value="indian">Indian</option>
-                                        <option value="french">French</option>
-                                        <option value="ethiopian">Ethiopian</option>
-                                        <option value="japanese">Japanese</option>
-                                        <option value="spanish">Spanish</option>
-                                        <option value="mexican">Mexican</option>
-                                        <option value="greek">Greek</option>
-                                        <option value="italian">Italian</option>
-                                    </select>
-                                    <label>Select Style of Cuisine</label>
                                 </div>
-                                <div class="input-field col s6">
-                                    <select id="courseType">
-                                        <option value="" disabled selected>Select Course Type</option>
-                                        <option value="Appetizer">Appetizer</option>
-                                        <option value="Main">Main</option>
-                                        <option value="Dessert">Dessert</option>
 
-                                    </select>
-                                    <label>Select Course Type</label>
+
+
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <select id="cuisineType">
+                                            <option value="" disabled selected>Select Cuisine Style</option>
+                                            <option value="thai">Thai</option>
+                                            <option value="chinese">Chinese</option>
+                                            <option value="indian">Indian</option>
+                                            <option value="french">French</option>
+                                            <option value="ethiopian">Ethiopian</option>
+                                            <option value="japanese">Japanese</option>
+                                            <option value="spanish">Spanish</option>
+                                            <option value="mexican">Mexican</option>
+                                            <option value="greek">Greek</option>
+                                            <option value="italian">Italian</option>
+                                        </select>
+                                        <label>Select Style of Cuisine</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <select id="courseType">
+                                            <option value="" disabled selected>Select Course Type</option>
+                                            <option value="Appetizer">Appetizer</option>
+                                            <option value="Main">Main</option>
+                                            <option value="Dessert">Dessert</option>
+
+                                        </select>
+                                        <label>Select Course Type</label>
+                                    </div>
                                 </div>
+
+
+
+
+
+                                <a id="searchPageBtn" class="waves-effect waves-light btn-large">Search</a>
                             </div>
-
-
-
-
-
-                            <a id="searchPageBtn" class="waves-effect waves-light btn-large">Search</a>
                         </div>
                     </div>
+
+
                 </div>
-
-
             </div>
         </div>
-
     </div>
 
     <footer class="page-footer">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Welcome To Family Meal</h5>
+                    <h5 class="white-text">Welcome To</h5>
+                    <h5 class="white-text" style="font-weight:bolder">Family Meal</h5>
 
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Brought To You By</h5>
                     <ul>
-                            <li><a class="white-text text-lighten-1" href="https://github.com/stolbert3">Sydney Tolbert</a></li>
-                            <li><a class="white-text text-lighten-1" href="https://github.com/Miked13">Mike D.</a></li>
-                            <li><a class="white-text text-lighten-1" href="https://github.com/Sritchey1">Scott Ritchey</a></li>
+                        <li>
+                            <a class="white-text text-lighten-1" href="https://github.com/stolbert3">Sydney Tolbert</a>
+                        </li>
+                        <li>
+                            <a class="white-text text-lighten-1" href="https://github.com/Miked13">Mike D.</a>
+                        </li>
+                        <li>
+                            <a class="white-text text-lighten-1" href="https://github.com/Sritchey1">Scott Ritchey</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -138,6 +147,7 @@
 
             </div>
         </div>
+
     </footer>
 
 

@@ -3,10 +3,11 @@
 
   
 
-p, .card-title, .card-action {
-  font-family: 'Work Sans', sans-serif;
- 
+body {
+  font-family: 'Roboto', sans-serif;
 }
+
+
 
 #search_container{
   background-image: url("../views/images/plate_image.jpeg");
