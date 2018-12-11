@@ -1,62 +1,86 @@
 
 // Get references to page elements and set variables for all individual data that needs to be stored
-var allergyGluten = $("#gluten");
-var allergyShellfish = $("#shellfish");
-var allergyPeanuts = $("#peanuts");
-var allergyNutsOther = $("#nutsOther");
-var allergydairy = $("#dairy");
+var allergyDairy = $("#dairy");
 var allergyEggs = $("#eggs");
-var cuisineType = $("#cuisineType");
+var allergyGluten = $("#gluten");
+var allergyNutsOther = $("#nutsOther");
+var allergyPeanuts = $("#peanuts");
+var allergyShellfish = $("#shellfish");
 var courseType = $("#courseType");
+var cuisineType = $("#cuisineType");
 var dishName = $("#dishName");
-var recipeIngredient = $("#textAreaIngredient");
-var recipeAmount = $("#textAreaAmount");
-var measureSolids = $("#measureSolids");
 var measureLiquids = $("#measureLiquids");
+var measureSolids = $("#measureSolids");
+var recipeAmount = $("#textAreaAmount");
+var recipeIngredient = $("#textAreaIngredient");
 var recipeInstructions = $("#textAreaInstructions");
-var submitBtn = $("#submitBtn");
-var privateBtn = $("#privateBtn");
 var recipeList = $("#recipeList");
-
-
+var submitBtn = $("#submitBtn");
 
 // The API object contains methods for each kind of request we'll make
-// URL empty until html routes determined
+
 var API = {
+  // Get all recipes
+  getRecipe: function() {
+    return $.ajax({
+      url: "api/all-recipes",
+      type: "GET"
+    });
+  },
+  // Get recipe details by id
+  getRecipeId: function(id) {
+    return $.ajax({
+      url: "api/all-recipes/" + id,
+      type: "GET"
+    });
+  },
+  // Get recipe by chef name
+  getRecipeChef: function(chef) {
+    return $.ajax({
+      url: "api/all-recipes/chef/" + chef,
+      type: "GET"
+    });
+  },
   // Save New Recipe
-  saveRecipe: function(recipe) {
+  addRecipe: function(recipe) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "",
-      data: JSON.stringify(saveRecipe)
-    });
-  },
-  // Get recipe by id
-  getRecipe: function() {
-    return $.ajax({
-      url: "",
-      type: "GET"
+      url: "api/add-recipe",
+      data: JSON.stringify(addRecipe)
     });
   },
   // Delete recipe
   deleteRecipe: function(id) {
     return $.ajax({
-      url: "" + id,
+      url: "api/delete-recipe/" + id,
       type: "DELETE"
     });
-  }
+  },
   // Edit recipe
-
-  
+  editRecipe: function(id) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "PUT",
+      url: "api/update-recipe/" + id,
+      data: JSON.stringify(editRecipe)
+    });
+  }
 };
+
+// Login
+// Pull recipe names by chef (user account - recipe list)
+// Pull recipe names by search terms (search - recipe list)
+// Pull recipe details by recipe id (recipe detail page)
 
 // searchRecipes gets new recipes from the db and repopulates the list
 var searchRecipe = function() {
   API.getRecipe().then(function(data) {
-    var recipe = data.map(function(recipe) {
+    var recipes = data.map(function(recipe) {
       var searchedRecipeHolder = $("<#searchedRecipeHolder>")
         .text(recipe.text)
         .attr("href", "/example/" + recipe.id);
@@ -78,9 +102,10 @@ var searchRecipe = function() {
     });
 
     recipeList.empty();
-   recipeList.append(recipes);
+    recipeList.append(recipes);
   });
 };
+
 // Function that generates rows in materialize
 $(document).ready(function () {
   $('select').formSelect();
@@ -89,39 +114,93 @@ $(document).ready(function () {
 // Function that generates new ingredient row
 $(document).ready(function(){
   console.log("Running?");
-$("#add-button").click(function() {
-  console.log("click event?");
-    var ingredientRow = document.getElementById("ingredientRow").outerHTML;
-    $("#hide").append(ingredientRow);
-    console.log(ingredientRow);
+  $("#add-button").click(function() {
+    console.log("click event?");
+      var ingredientRow = document.getElementById("ingredientRow").outerHTML;
+      $("#hide").append(ingredientRow);
+      console.log(ingredientRow);
   });
-
 });
 
+var refreshRecipes = function() {
+  API.getRecipeChef().then(function(data) {
+    var $examples = data.map(function(example) {
+      var $a = $("<a>")
+        .text(example.text)
+        .attr("href", "/example/" + example.id);
 
+      var $li = $("<li>")
+        .attr({
+          class: "list-group-item",
+          "data-id": example.id
+        })
+        .append($a);
 
+      var $button = $("<button>")
+        .addClass("btn btn-danger float-right delete")
+        .text("ｘ");
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+      $li.append($button);
+
+      return $li;
+    });
+
+    $exampleList.empty();
+    $exampleList.append($examples);
+  });
+};
+
+// handleRecipeSubmit is called whenever we submit a new recipe
+// Save the new recipe to the db and refresh the list
+var handleRecipeSubmit = function(event) {
   event.preventDefault();
 
-  var submitRecipe = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var newRecipe = {
+    name: dishName.val().trim(),
+    chefName: chefName.val().trim(),
+    cuisine: cuisineType.val().trim(),
+    course: courseType.val().trim(),
+    cookingInstructions: recipeInstructions.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  var newRecipeIngredients = {
+    name: recipeIngredient.val().trim(),
+    quantity: recipeAmount.val().trim(),
+    measure: measureLiquids.val().trim() + measureSolids.val().trim(),
+  };
+
+  var newRecipeAllergens = {
+    gluten: allergyGluten.val().trim(),
+    shellfish: allergyShellfish.val().trim(),
+    peanuts: allergyPeanuts.val().trim(),
+    nuts_other: allergyNutsOther.val().trim(),
+    dairy: allergyDairy.val().trim(),
+    eggs: allergyEggs.val().trim()
+  };
+
+  if (!(newRecipe.recipe_name && newRecipe.chef_name && newRecipe.cuisine_type && newRecipe.course_type && newRecipe.cooking_instructions && newRecipeIngredients.name && newRecipeIngredients.quantity && newRecipeIngredients.measure)) {
+    alert("You must fill in all fields before submitting!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.addRecipe(newRecipe).then(function() {
+    API.addRecipe(newRecipeIngredients).then(function() {
+      API.addRecipe(newRecipeAllergens).then(function() {
+        refreshRecipes();
+      })
+    })
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  dishName.val("");
+  chefName.val("");
+  cuisineType.val("");
+  courseType.val("");
+  recipeInstructions.val("");
+  recipeIngredient.val("");
+  recipeAmount.val("");
+  measureLiquids.val("");
+  measureSolids.val("");
+
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -131,13 +210,13 @@ var handleDeleteBtnClick = function() {
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deleteRecipe(idToDelete).then(function() {
+    refreshRecipes();
   });
 };
 
 // Add event listeners to the submit and delete buttons
-submitBtn.on("click", handleFormSubmit);
+submitBtn.on("click", handleRecipeSubmit;
 //exampleList.on("click", ".delete", handleDeleteBtnClick);
 //addIngredient.on("click", handleRowExpand);
 

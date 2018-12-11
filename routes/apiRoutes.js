@@ -21,6 +21,7 @@ module.exports = function(app) {
       res.json(dbRecipes);
     });
   });
+
   // Get recipes by restaurant name
   app.get("/api/all-recipes/restaurant/:restaurant", function(req, res) {
     db.Recipes.findAll({
@@ -72,11 +73,9 @@ module.exports = function(app) {
     db.Recipes.create({
       recipe_name: req.body.name,
       chef_name: req.body.chefName,
-      restaurant_name: req.body.restaurantName,
       cuisine_type: req.body.cuisine,
       course_type: req.body.course,
       cooking_instructions: req.body.cookingInstructions,
-      privacy: req.body.privacy
     }).then(function(dbRecipes) {
       res.json(dbRecipes);
     });
@@ -105,8 +104,10 @@ module.exports = function(app) {
   app.delete("/api/delete-recipe/:id", function(req, res) {
     db.Recipes.destroy({ 
       where: { 
-        recipe_id: req.params.id 
-      } 
+        id: req.params.id 
+      },
+      include: [db.Ingredients],
+      include: [db.Allergens]
     }).then(function(dbRecipes) {
       res.json(dbRecipes);
     });
@@ -123,14 +124,14 @@ module.exports = function(app) {
     });
     db.Ingredients.update(req.body, {
       where: {
-        recipes_id: req.body.id
+        id: req.body.id
       }
     }).then(function(dbIngredients) {
       res.json(dbIngredients);
     });
     db.Allergens.update(req.body, {
       where: {
-        recipe_id: req.body.id
+        id: req.body.id
       }
     }).then(function(dbAllergens) {
       res.json(dbAllergens);
