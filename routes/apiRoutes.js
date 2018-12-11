@@ -59,7 +59,7 @@ module.exports = function(app) {
   app.get("/api/all-recipes/:recipe-id", function(req, res) {
     db.Recipes.findAll({
       where: {
-        id: req.params.recipe-id
+        recipe_id: req.params.recipe-id
       },
       include: [db.Ingredients],
       include: [db.Allergens]
@@ -80,7 +80,7 @@ module.exports = function(app) {
       res.json(dbRecipes);
     });
     db.Ingredients.create({
-      recipes_id: req.body.id,
+      recipes_id: 0,
       ingredient_name: req.body.name,
       ingredient_quantity: req.body.quantity,
       ingredient_measure: req.body.measure,
@@ -88,7 +88,6 @@ module.exports = function(app) {
       res.json(dbIngredients);
     });
     db.Allergens.create({
-      recipe_id: req.body.id,
       gluten: req.body.gluten,
       shellfish: req.body.shellfish,
       peanuts: req.body.peanuts,
@@ -104,7 +103,7 @@ module.exports = function(app) {
   app.delete("/api/delete-recipe/:id", function(req, res) {
     db.Recipes.destroy({ 
       where: { 
-        id: req.params.id 
+        recipe_id: req.params.id 
       },
       include: [db.Ingredients],
       include: [db.Allergens]
@@ -117,21 +116,21 @@ module.exports = function(app) {
   app.put("/api/update-recipe/:id", function(req, res) {
     db.Recipes.update(req.body, {
       where: {
-        id: req.body.id
+        recipe_id: req.body.id
       }
     }).then(function(dbPost) {
       res.json(dbPost);
     });
     db.Ingredients.update(req.body, {
       where: {
-        id: req.body.id
+        recipe_id: req.body.id
       }
     }).then(function(dbIngredients) {
       res.json(dbIngredients);
     });
     db.Allergens.update(req.body, {
       where: {
-        id: req.body.id
+        recipe_id: req.body.id
       }
     }).then(function(dbAllergens) {
       res.json(dbAllergens);

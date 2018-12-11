@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Recipes = sequelize.define("recipes", {
-    id: DataTypes.INTEGER,
+    recipe_id: DataTypes.INTEGER,
     recipe_name: DataTypes.STRING,
     chef_name: DataTypes.STRING,
     restaurant_name: DataTypes.STRING,
@@ -9,14 +9,5 @@ module.exports = function(sequelize, DataTypes) {
     cooking_instructions: DataTypes.STRING,
     privacy: DataTypes.BOOLEAN
   });
-
-
-  Recipes.associate = function(models) {
-    Recipes.belongsTo(models.Users, {
-      foreignKey: {
-        allowNull: false
-      }
-    })
-  };
   return Recipes;
 };

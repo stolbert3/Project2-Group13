@@ -3,7 +3,7 @@ var path = require("path");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/layouts/login.html"));
+    res.sendFile(path.join(__dirname, "../views/layouts/index.html"));
   });
 
   // Load search page
@@ -22,7 +22,7 @@ module.exports = function(app) {
   });
 
   // Load recipe detail page
-  app.get("/recipe", function(req, res) {
+  app.get("/recipe.html", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/layouts/recipes.html"));
   });
 
