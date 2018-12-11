@@ -1,15 +1,11 @@
-/* style for login.html */
-
-
-  
-
+/* change all font */
 body {
   font-family: 'Roboto', sans-serif;
 }
 
 
-
-#search_container{
+/* background photo for search page */
+#search_container {
   background-image: url("../views/images/plate_image.jpeg");
 
   /* Full height */
@@ -20,8 +16,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 
-  
 }
+/* background photo for submit page */
 #submit_container, #recipe_container{
   background-image: url(../views/images/empty_kitchen.jpeg);
 
@@ -33,25 +29,22 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 
-  
-
 }
 
-.row{
+.row {
   padding:20px;
 }
 
-.page-footer{
+.page-footer {
  background-color:#8DACB1;
  
-
 }
 
-#publishBtn, #searchBtn, #searchPageBtn, #add-button  {
+#publishBtn, #searchBtn, #searchPageBtn, #add-button {
   background-color: 	#7B7575;
  
 }
-
+/* css code for materialize sticky footer */
 body {
   display: flex;
   min-height: 100vh;

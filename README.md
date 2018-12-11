@@ -1,7 +1,40 @@
-# Project2-Group13
+# Family Meal
+##### Project2-Group13
 
-What problem does your app focus on: While apps like HotSchedule have created a way to more efficiently store, update, and share schedules in a restaurant, most chefs still use written paper recipes. This creates the potential for the loss of recipes, limits sharing, and reduces collaboration.
+While apps like HotSchedule have created a way to more efficiently store, update, and share schedules in a restaurant, most chefs still use written paper recipes. Paper recipes create the potential for the loss of recipes, limits sharing, and reduces collaboration.
 
-How does your app solve this problem at a high-level: Our app will create a dynamic recipe API that can be used to store recipes safely, search recipes by ingredients or styles, and eventually create real time recipe collaboration. Chefs or restaurants will be able to link to their recipes for easy reference.
+Family Meal will is a dynamic app and API that can be used to store recipes safely, search recipes by ingredients, cuisine styles, allergens, and course types. Chefs or restaurants will be able to link to their recipes for easy reference.
 
-**New technology: potentially use township-accounts (package) for user authentication. Will allow user to see their submission history, keep recipes private, or post recipes for others to view.
+## Getting Started
+
+* [Family Meal]() - Deployed Version of the Site can be viewed here. 
+
+### Prerequisites
+
+
+
+
+Web Browser - Google Chrome Preferred
+
+
+### Installing
+
+
+
+## Built With
+
+* [Materialize](https://materializecss.com/) - For the CSS Styling of the Webpage.
+* [MySQL](https://www.mysql.com/) - For database storage and recall.
+* [Sequelize](https://momentjs.com/) - https://www.npmjs.com/package/sequelize - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, SQLite and Microsoft SQL Server.
+
+
+## Authors
+
+
+
+* **Sydney Tolbert** -- [stolbert3](https://github.com/stolbert3)
+* **Mike D** -- [Miked13](https://github.com/Miked13)
+* **Scott Ritchey** -- [Sritchey1](https://github.com/Sritchey1)
+
+## Acknowledgments
+
