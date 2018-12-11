@@ -22,7 +22,7 @@ module.exports = function(app) {
   });
 
   // Load recipe detail page
-  app.get("/recipe", function(req, res) {
+  app.get("/recipe.html", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/layouts/recipes.html"));
   });
 

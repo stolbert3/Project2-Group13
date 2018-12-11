@@ -8,13 +8,5 @@ module.exports = function(sequelize, DataTypes) {
     dairy: DataTypes.BOOLEAN,
     eggs: DataTypes.BOOLEAN
   });
-
-  Allergens.associate = function(models) {
-    Allergens.belongsTo(models.Recipes, {
-      foreignKey: {
-        allowNull: false
-      }
-    })
-  };
   return Allergens;
 };

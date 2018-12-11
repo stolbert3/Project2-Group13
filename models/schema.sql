@@ -1,7 +1,7 @@
 USE otj3fb44o1mpkoat;
 
 CREATE TABLE recipes (
-	id INT NOT NULL AUTO_INCREMENT,
+	recipe_id INT NOT NULL AUTO_INCREMENT,
     recipe_name VARCHAR(500),
     chef_name VARCHAR(200),
     restaurant_name VARCHAR(300),
@@ -9,11 +9,11 @@ CREATE TABLE recipes (
     course_type VARCHAR(100),
 	cooking_instructions VARCHAR(3000),
     privacy BOOLEAN NOT NULL DEFAULT 0,
-    PRIMARY KEY (id)
+    PRIMARY KEY (recipe_id)
 );
 
 CREATE TABLE allergens (
-	id INT NOT NULL,
+	recipe_id INT NOT NULL AUTO_INCREMENT,
 	gluten BOOLEAN NOT NULL DEFAULT 0,
     shellfish BOOLEAN NOT NULL DEFAULT 0,
     peanuts BOOLEAN NOT NULL DEFAULT 0,
@@ -23,7 +23,7 @@ CREATE TABLE allergens (
 );
 
 CREATE TABLE ingredient_list (
-	id INT NOT NULL,
+	recipe_id INT NOT NULL,
     ingredient_name VARCHAR(100),
     ingredient_quantity VARCHAR(50),
     ingredient_measure VARCHAR(50)

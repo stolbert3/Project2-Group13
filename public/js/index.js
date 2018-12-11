@@ -40,7 +40,7 @@ var API = {
     });
   },
   // Save New Recipe
-  addRecipe: function(recipe) {
+  addRecipe: function() {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -78,12 +78,12 @@ var viewAllRecipes = function() {
     var recipeInfo = data.map(function(recipe) {
       var $a = $("<a>")
       .text(recipe.recipe_name)
-      .attr("href", "api/all-recipes/" + recipe.id);
+      .attr("href", "api/all-recipes/" + recipe.recipe_id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": recipe.id
+          "data-id": recipe.recipe_id
         })
         .append($a);
 
@@ -122,8 +122,8 @@ var showRecipeDetail = function() {
 var searchRecipes = function() {
   API.getRecipe().then(function(data) {
     var recipeIdList = []
-    if (data.cuisine_type === cuisineType && data.course_type === courseType && data.gluten === allergyGluten && data.shellfish === allergyShellfish && data.peanuts === allergyPeanuts && data.nuts_other === allergyNutsOther && data.dairy === allergyDairy && data.eggs === allergyEggs) {
-      recipeIdList.append(data.id);
+    if (data.cuisine_type === cuisineType && data.course_type === courseType && data.gluten !== allergyGluten && data.shellfish !== allergyShellfish && data.peanuts !== allergyPeanuts && data.nuts_other !== allergyNutsOther && data.dairy !== allergyDairy && data.eggs !== allergyEggs) {
+      recipeIdList.append(data.recipe_id);
     }
     return recipeIdList;
   })
@@ -132,12 +132,12 @@ var searchRecipes = function() {
       var recipeInfo = data.map(function(recipe) {
         var $a = $("<a>")
         .text(recipe.recipe_name)
-        .attr("href", "api/all-recipes/" + recipe.id);
+        .attr("href", "api/all-recipes/" + recipe.recipe_id);
   
         var $li = $("<li>")
           .attr({
             class: "list-group-item",
-            "data-id": recipe.id
+            "data-id": recipe.recipe_id
           })
           .append($a);
   
