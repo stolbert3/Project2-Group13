@@ -1,12 +1,4 @@
-INSERT INTO recipes (recipe_name, chef_name, restaurant_name)
-	VALUES ("test recipe", "sydney", "georgia tech"),
-		("test recipe 2", "Mike", "georgia tech");
-        
-INSERT INTO allergens (recipe_id, gluten, shellfish, peanuts, nuts_other, dairy, eggs)
-	VALUES (1, true, true, false, false, true, true),
-        (2, false, false, true, true, false, false);
-
-INSERT INTO recipes (recipe_name, chef_name, restaurant_name, cuisine_type, course_typee, cooking_instructions, privacy)
+INSERT INTO recipes (recipe_name, chef_name, restaurant_name, cuisine_type, course_type, cooking_instructions, privacy)
 	VALUES("Larb", "Chef A", "Restaurant A", "Thai", "Main", "Dressing: Stir all ingredients in a small bowl to blend; set dressing aside. Chicken: Combine first 8 ingredients in a food processor. Drizzle 1 Tbsp. oil over and pulse until chicken is very finely chopped. Heat remaining 2 Tbsp. oil in a large heavy nonstick skillet over medium–high heat. Add chicken mixture and sauté, breaking up into small pieces with the back of a spoon, until chicken is starting to turn golden brown and is cooked through, about 6 minutes.
                Place 2 lettuce leaves on each plate. Top leaves with chicken mixture, dividing evenly. Garnish with cilantro and spoon reserved dressing over.", false),
 	     
@@ -21,50 +13,43 @@ INSERT INTO recipes (recipe_name, chef_name, restaurant_name, cuisine_type, cour
 
 	      ("Chocolate Mousse", "Chef C", "Restaurant C", "French", "Dessert", "Simply pour water into a saucepan (which will be improved from the gastronomic point of view if it is flavored with orange juice, for example, or cassis puree). Then, over medium-low heat, whisk in the chocolate. The result is a homogenous sauce. Put the saucepan in a bowl partly filled with ice cubes (or pour into another bowl over the ice -- it will chill faster), then whisk the chocolate sauce, either manually with a whisk or with an electric mixer (if using an electric mixer, watch closely -- it will thicken faster). Whisking creates large air bubbles in the sauce, which steadily thickens. After a while strands of chocolate form inside the loops of the whisk. Pour or spoon immediately into ramekins, small bowls or jars and let set.", false);
 
-INSERT INTO allergens ("", false, true, false, false, false, false),
-		      
-		      ("", false, true, true, false, false, false),
+INSERT INTO allergens (gluten, shellfish, peanuts, nuts_other, dairy, eggs)
+	VALUES(false, true, true, false, false, false),
+		(true, false, false, false, true, true),
+		(false, false, false, false, true, false);
 
-		      ("", true, false, false, false, true, true),
+INSERT INTO ingredient_list (recipe_id, ingredient_name, ingredient_quantity, ingredient_measure)
+	VALUES(1, "lime", "1/3", "cup"),
+				(1, "fish sauce", "2", "tablespoons"),
+			    (1, "white sugar", "2", "tablespoons"),
+			    (1, "boneless chicken breasts", "1 1/2", "pounds"),
+			    (1, "shallots, chopped", "1/2", "cup"),
+			    (1, "lemongrass, thinly sliced", "2", "tablespoons"),
+			    (1, "thai chili, thinly sliced", "2", "tablespoons"),
+			    (1, "garlic clove", "2", "tablespoons"),
+ 			    (1, "kosher salt", "1", "teaspoon"),
+ 			    (1, "canola oil", "3", "tablespoons"),
+			    (1, "iceberg lettuce", "1/2", "cup"),
+ 			    (1, "cilantro, chopped", "1/4", "cup"),
 
-		      ("", false, false, false, false, true, false);
+			    (2, "green mangoes, peeled, chopped", "2", "cups"),
+			    (2, "red onion, sliced", "1/4", "cup"),
+			    (2, "red pepper, sliced", "1/4", "cup"),
+			    (2, "mint, chopped", "1/4", "cup"),
+			    (2, "cilantro, chopped", "1/4", "cup"),
+			    (2, "garlic clove", "2", "tablespoons"),
+ 			    (2, "kosher salt", "1", "teaspoon"),
+ 			    (2, "bird's eye chili, sliced", "2", "tablespoons"),
+			    (2, "fish sauce", "2", "tablespoons"),
+ 			    (2, "dry roasted peanuts", "1/2", "cup"),
+			    (2, "lime juice", "2", "tablespoons"),
 
-INSERT INTO ingredient_list ("", "lime", "1/3", "cup"),
-	                    ("", "fish sauce", "2", "tablespoons"),
-			    ("", "white sugar", "2", "tablespoons"),
-			    ("", "boneless chicken breasts", "1 1/2", "pounds"),
-			    ("", "shallots, chopped", "1/2", "cup"),
-			    ("", "lemongrass, thinly sliced", "2", "tablespoons"),
-			    ("", "thai chili, thinly sliced", "2", "tablespoons"),
-			    ("", "garlic clove", "2", "tablespoons"),
- 			    ("", "kosher salt", "1", "teaspoon"),
- 			    ("", "canola oil", "3", "tablespoons"),
-			    ("", "iceberg lettuce", "1/2", "cup"),
- 			    ("", "cilantro, chopped", "1/4", "cup"),
-
-			    ("", "green mangoes, peeled, chopped", "2", "cups"),
-			    ("", "red onion, sliced", "1/4", "cup"),
-			    ("", "red pepper, sliced", "1/4", "cup"),
-			    ("", "mint, chopped", "1/4", "cup"),
-			    ("", "cilantro, chopped", "1/4", "cup"),
-			    ("", "garlic clove", "2", "tablespoons"),
- 			    ("", "kosher salt", "1", "teaspoon"),
- 			    ("", "bird's eye chili, sliced", "2", "tablespoons"),
-			    ("", "fish sauce", "2", "tablespoons"),
- 			    ("", "dry roasted peanuts", "1/2", "cup"),
-			    ("", "lime juice", "2", "tablespoons"),
-
-			    ("", "eggs", "3", "each"),
-			    ("", "parmesan", "1", "cup"),
-			    ("", "red pepper, sliced", "1/4", "cup"),
-			    ("", "bacon", "8", "each"),
-			    ("", "garlic, minced", "2", "tablespoons"),
-			    ("", "black pepper", "2", "tablespoons"),
- 			    ("", "olive oil", "1", "teaspoon"),
- 			    ("", "parsley, chopped", "1/2", "cup"),
-
-			    ("", "water", "3/4", "cup"),
-			    ("", "chocolate", "8", "ounces"),
- 			    ("", "ice cubes", "1/2", "cup"),
- 			    ("", "whipped cream", "1/2", "cup"),
+			    (3, "eggs", "3", "each"),
+			    (3, "parmesan", "1", "cup"),
+			    (3, "red pepper, sliced", "1/4", "cup"),
+			    (3, "bacon", "8", "each"),
+			    (3, "garlic, minced", "2", "tablespoons"),
+			    (3, "black pepper", "2", "tablespoons"),
+ 			    (3, "olive oil", "1", "teaspoon"),
+ 			    (3, "parsley, chopped", "1/2", "cup")
 			   
