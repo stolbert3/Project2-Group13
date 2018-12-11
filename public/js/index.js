@@ -86,7 +86,7 @@ var viewAllRecipes = function() {
           "data-id": recipe.recipe_id
         })
         .append($a);
-
+      console.log($li);
       return $li;
     });
 
@@ -140,12 +140,11 @@ var searchRecipes = function() {
           .text("View");
   
         $li.append($button);*/
-  
         return $li;
       });
   
-      $("#recipeList").empty();
-      $("#recipeList").append(recipeInfo);
+      $("#recipe-list").empty();
+      $("#recipe-list").append(recipeInfo);
     });
   }
 }
@@ -233,16 +232,16 @@ $(document).ready(function(){
 });
 
 // Adds new recipe to database
-$("#publishBtn").on("click", handleRecipeSubmit);
+$("#publishBtn").on("click", handleRecipeSubmit());
 
 // Searches for recipes based on search parameters
-$("#searchPageBtn").on("click", searchRecipes);
+$("#searchPageBtn").on("click", searchRecipes());
 
 // Shows recipe detail
-$("#recipePageBtn").on("click", showRecipeDetail);
+$("#recipePageBtn").on("click", showRecipeDetail());
 
 // View all recipes
-$("#viewAllBtn").on("click", viewAllRecipes);
+$("#viewAllBtn").on("click", viewAllRecipes());
 
 //exampleList.on("click", ".delete", handleDeleteBtnClick);
 //addIngredient.on("click", handleRowExpand);
