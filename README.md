@@ -25,7 +25,9 @@ Web Browser - Google Chrome Preferred
 
 * [Materialize](https://materializecss.com/) - For the CSS Styling of the Webpage.
 * [MySQL](https://www.mysql.com/) - For database storage and recall.
-* [Sequelize](https://momentjs.com/) - https://www.npmjs.com/package/sequelize - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, SQLite and Microsoft SQL Server.
+* [Sequelize](https://www.npmjs.com/package/sequelize) - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, SQLite and Microsoft SQL Server.
+* [Express](https://www.npmjs.com/package/express) - Fast, unopinionated, minimalist web framework for node.
+* [Heroku](https://www.heroku.com/) - https://www.npmjs.com/package/sequelize - A platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
 
 ## Authors
