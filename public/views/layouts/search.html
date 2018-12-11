@@ -19,108 +19,134 @@
             $('select').formSelect();
         });
     </script>
+    <div id="search_container" class="container">
+
+        <div class="row">
+            <div class="col s12">
 
 
-    <body>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card white-grey darken-10" style="padding:20px">
+                            <div class="row">
+                                <form id="allergy_row" class="col s6">
+                                    <h6>Food Allergies</h6>
 
-        <div class="col s12 m8 offset-m2 l6 offset-l3">
-            <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row valign-wrapper">
-                    <div class="col s3">
-                        <img src="../images/plate_image.jpeg" alt="image of plate" class="">
+                                    <form action="#">
+                                        <p>
 
+                                            <label>
+                                                <input id="gluten" type="checkbox" />
+                                                <span>Gluten</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="shellfish" type="checkbox" />
+                                                <span>Shellfish</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="peanuts" type="checkbox" />
+                                                <span>Peanuts</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="nutsOther" type="checkbox" />
+                                                <span>Nuts - Other</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="dairy" type="checkbox" />
+                                                <span>Dairy</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="eggs" type="checkbox" />
+                                                <span>Eggs</span>
+                                            </label>
+                                        </p>
+                                    </form>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <select id="cuisineType">
+                                        <option value="" disabled selected>Select Style of Cuisine</option>
+                                        <option value="thai">Thai</option>
+                                        <option value="chinese">Chinese</option>
+                                        <option value="indian">Indian</option>
+                                        <option value="french">French</option>
+                                        <option value="ethiopian">Ethiopian</option>
+                                        <option value="japanese">Japanese</option>
+                                        <option value="spanish">Spanish</option>
+                                        <option value="mexican">Mexican</option>
+                                        <option value="greek">Greek</option>
+                                        <option value="italian">Italian</option>
+                                    </select>
+                                    <label>Select Style of Cuisine</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select id="courseType">
+                                        <option value="" disabled selected>Select Course Type</option>
+                                        <option value="Appetizer">Appetizer</option>
+                                        <option value="Main">Main</option>
+                                        <option value="Dessert">Dessert</option>
+
+                                    </select>
+                                    <label>Select Course Type</label>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <a id="searchPageBtn" class="waves-effect waves-light btn-large">Search</a>
+                        </div>
                     </div>
-                    <div class="col s10">
-                        <span class="black-text">
+                </div>
 
-                        </span>
-                    </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Welcome To Family Meal</h5>
+
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Brought To You By</h5>
+                    <ul>
+                            <li><a class="white-text text-lighten-1" href="https://github.com/stolbert3">Sydney Tolbert</a></li>
+                            <li><a class="white-text text-lighten-1" href="https://github.com/Miked13">Mike D.</a></li>
+                            <li><a class="white-text text-lighten-1" href="https://github.com/Sritchey1">Scott Ritchey</a></li>
+
+                    </ul>
                 </div>
             </div>
         </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright
 
-        <div class="row">
-            <form class="col s6">
-                <h6>Exclude Food Allergies in Dish</h6>
-
-                <form action="#">
-                    <p>
-
-                        <label>
-                            <input id="gluten" type="checkbox" />
-                            <span>Gluten</span>
-                        </label>
-                        <br>
-                        <label>
-                            <input id="shellfish" type="checkbox" />
-                            <span>Shellfish</span>
-                        </label>
-                        <br>
-                        <label>
-                            <input id="peanuts" type="checkbox" />
-                            <span>Peanuts</span>
-                        </label>
-                        <br>
-                        <label>
-                            <input id="nutsOther" type="checkbox" />
-                            <span>Nuts - Other</span>
-                        </label>
-                        <br>
-                        <label>
-                            <input id="dairy" type="checkbox" />
-                            <span>Dairy</span>
-                        </label>
-                        <br>
-                        <label>
-                            <input id="eggs" type="checkbox" />
-                            <span>Eggs</span>
-                        </label>
-                    </p>
-                </form>
-        </div>
-
-
-
-        <div class="row">
-            <div class="input-field col s6">
-                <select id="cuisineType">
-                    <option value="" disabled selected>Select Style of Cuisine</option>
-                    <option value="thai">Thai</option>
-                    <option value="chinese">Chinese</option>
-                    <option value="indian">Indian</option>
-                    <option value="french">French</option>
-                        <option value="ethiopian">Ethiopian</option>
-                        <option value="japanese">Japanese</option>
-                        <option value="spanish">Spanish</option>
-                        <option value="mexican">Mexican</option>
-                        <option value="greek">Greek</option>
-                        <option value="italian">Italian</option>
-                </select>
-                <label>Select Style of Cuisine</label>
             </div>
         </div>
+    </footer>
 
-        <div class="row">
-            <div class="input-field col s6">
-                <select id="courseType">
-                    <option value="" disabled selected>Select Course Type</option>
-                    <option value="Appetizer">Appetizer</option>
-                    <option value="Main">Main</option>
-                    <option value="Dessert">Dessert</option>
 
-                </select>
-                <label>Select Course Type</label>
-            </div>
-        </div>
+    <!-- Custom Script -->
+
+    <script src="../../js/index.js" type="text/javascript"></script>
 
 
 
-        <a class="waves-effect waves-light btn-large">Search</a>
-
-        <!-- Custom Script -->
-
-        <script src="../../js/index.js" type="text/javascript"></script>
-
-    </body>
+</body>
 
 </html>

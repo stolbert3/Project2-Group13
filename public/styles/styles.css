@@ -1,3 +1,52 @@
-.list-group-item {
-  line-height: 2.5;
+/* style for login.html */
+
+
+  
+
+p, .card-title, .card-action {
+  font-family: 'Work Sans', sans-serif;
+ 
+}
+
+#search_container{
+  background-image: url("../views/images/plate_image.jpeg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+#submit_container{
+  background-image: url(../views/images/empty_kitchen.jpeg);
+
+  /* Full height */
+  height: 1000%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+
+}
+
+.row{
+  padding:10px;
+}
+
+.page-footer{
+ background-color:#8DACB1;
+ 
+
+}
+
+#publishBtn, #searchBtn, #searchPageBtn, #add-button  {
+  background-color: 	#7B7575;
+ 
 }
