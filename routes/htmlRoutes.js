@@ -17,6 +17,16 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../layouts/submit.html"));
   });
 
+  // Load search results page
+  app.get("/results", function(req, res) {
+    res.sendFile(path.join(__dirname, "../layouts/results.html"));
+  });
+
+  // Load recipe detail page
+  app.get("/recipe", function(req, res) {
+    res.sendFile(path.join(__dirname, "../layouts/recipes.html"));
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

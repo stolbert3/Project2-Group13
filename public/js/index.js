@@ -23,6 +23,7 @@ var recipeList = $("#recipeList");
 // The API object contains methods for each kind of request we'll make
 // URL empty until html routes determined
 var API = {
+  // Save New Recipe
   saveRecipe: function(recipe) {
     return $.ajax({
       headers: {
@@ -33,18 +34,23 @@ var API = {
       data: JSON.stringify(saveRecipe)
     });
   },
+  // Get recipe by id
   getRecipe: function() {
     return $.ajax({
       url: "",
       type: "GET"
     });
   },
+  // Delete recipe
   deleteRecipe: function(id) {
     return $.ajax({
       url: "" + id,
       type: "DELETE"
     });
   }
+  // Edit recipe
+
+  
 };
 
 // searchRecipes gets new recipes from the db and repopulates the list
