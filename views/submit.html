@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Recipe - Submit</title>
+    <title>Family Meal - Submit</title>
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -12,7 +12,10 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Eczar|Roboto" rel="stylesheet">
 </head>
+<<<<<<< HEAD:views/submit.html
 <script> $(document).ready(function () {
         $('select').formSelect();
     });
@@ -21,58 +24,178 @@
 
 <body>
     <div class="" class="container">
+=======
+
+<body>
+    <script> $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+    <div id="submit_container" class="container">
+
+>>>>>>> fa0d3376ca1af43491ee82c194b40bb4de03bf89:public/views/layouts/submit.html
         <div class="row">
-            <form class="col s12">
+            <div class="col s12">
+
+
                 <div class="row">
-                    <div class="input-field col s6">
-                        <input placeholder="Dish" id="dishName" type="text" class="validate">
-                        <label for="dishName">Dish Name</label>
+
+                    <div class="col s12 m6">
+                        <div class="card white-grey darken-10" style="padding:20px">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="" id="dishName" type="text" class="validate">
+                                    <label for="dishName">Dish Name</label>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div id="allergy_row" class="col s6">
+                                    <h6>Allergens</h6>
+
+                                    <form action="#">
+                                        <p>
+
+                                            <label>
+                                                <input id="gluten" type="checkbox" />
+                                                <span>Gluten</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="shellfish" type="checkbox" />
+                                                <span>Shellfish</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="peanuts" type="checkbox" />
+                                                <span>Peanuts</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="nutsOther" type="checkbox" />
+                                                <span>Nuts - Other</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="dairy" type="checkbox" />
+                                                <span>Dairy</span>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <input id="eggs" type="checkbox" />
+                                                <span>Eggs</span>
+                                            </label>
+                                        </p>
+                                    </form>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <select id="cuisineType">
+                                            <option value="" disabled selected>Select Cuisine Style</option>
+                                            <option value="thai">Thai</option>
+                                            <option value="chinese">Chinese</option>
+                                            <option value="indian">Indian</option>
+                                            <option value="french">French</option>
+                                            <option value="ethiopian">Ethiopian</option>
+                                            <option value="japanese">Japanese</option>
+                                            <option value="spanish">Spanish</option>
+                                            <option value="mexican">Mexican</option>
+                                            <option value="greek">Greek</option>
+                                            <option value="italian">Italian</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <select id="courseType">
+                                            <option value="" disabled selected>Select Course Type</option>
+                                            <option value="Appetizer">Appetizer</option>
+                                            <option value="Main">Main</option>
+                                            <option value="Dessert">Dessert</option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <a id="addBtn" class="btn-floating btn-large waves-effect waves-light red" style="margin-left: 10px">
+                                            <i id="add-button" class="material-icons">Add</i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div id="hide" class="row">
+                                    <div class="col s12">
+
+                                        <div id="ingredientRow" class="row">
+                                            <form class="col s6">
+                                                <textarea id="textAreaIngredient" class="materialize-textarea">Ingredient</textarea>
+
+                                            </form>
+                                            <form class="col s6">
+                                                <textarea id="textAreaAmount" class="materialize-textarea">Amount</textarea>
+
+                                            </form>
+                                            <div id="ingredientRow" class="row">
+                                                <form class="col s6">
+
+                                                    <select id="measureSolids" class="browser-default">
+                                                        <option value="" disabled selected>Measure Solids</option>
+                                                        <option value="cups">Cups</option>
+                                                        <option value="dashes">Dashes</option>
+                                                        <option value="ounces">Ounces</option>
+                                                        <option value="pinches">Pinches</option>
+                                                        <option value="tablespoons">Tablespoons</option>
+                                                        <option value="teaspoons">Teaspoons</option>
+                                                        <option value="pounds">Pounds</option>
+                                                        <option value="each">Each</option>
+                                                    </select>
+                                                </form>
+                                                <form class="col s6">
+
+                                                    <select id="measureLiquids" class="browser-default">
+                                                        <option value="" disabled selected>Measure Liquids</option>
+                                                        <option value="cups">Cups</option>
+                                                        <option value="drops">Drops</option>
+                                                        <option value="gallons">Gallons</option>
+                                                        <option value="ounces">Ounces</option>
+                                                        <option value="pints">Pints</option>
+                                                        <option value="quarts">Quarts</option>
+                                                        <option value="tablespoons">Tablespoons</option>
+                                                        <option value="teaspoons">Teaspoons</option>
+                                                    </select>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <textarea id="textAreaInstructions" class="materialize-textarea">Instructions Here</textarea>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col s12">
+                                        <a id="publishBtn" class="waves-effect waves-light btn-large" style="margin-left: 10px">Publish</a>
+                                        <a id="searchBtn" class="waves-effect waves-light btn-large" style="margin-left: 10px">Search</a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-            </form>
-            </div>
 
-            <div class="row">
-                <form class="col s6">
-                    <h6>Select Food Allergies in Dish</h6>
-
-                    <form action="#">
-                        <p>
-
-                            <label>
-                                <input id="gluten" type="checkbox" />
-                                <span>Gluten</span>
-                            </label>
-                            <br>
-                            <label>
-                                <input id="shellfish" type="checkbox" />
-                                <span>Shellfish</span>
-                            </label>
-                            <br>
-                            <label>
-                                <input id="peanuts" type="checkbox" />
-                                <span>Peanuts</span>
-                            </label>
-                            <br>
-                            <label>
-                                <input id="nutsOther" type="checkbox" />
-                                <span>Nuts - Other</span>
-                            </label>
-                            <br>
-                            <label>
-                                <input id="dairy" type="checkbox" />
-                                <span>Dairy</span>
-                            </label>
-                            <br>
-                            <label>
-                                <input id="eggs" type="checkbox" />
-                                <span>Eggs</span>
-                            </label>
-                        </p>
-                    </form>
-            </div>
-
-
-
+<<<<<<< HEAD:views/submit.html
             <div class="row">
                 <div class="input-field col s6">
                     <select id="cuisineType">
@@ -102,10 +225,22 @@
 
                     </select>
                     <label>Select Course Type</label>
+=======
+
+>>>>>>> fa0d3376ca1af43491ee82c194b40bb4de03bf89:public/views/layouts/submit.html
                 </div>
             </div>
+        </div>
+    </div>
 
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Welcome To</h5>
+                    <h5 class="white-text" style="font-weight:bolder">Family Meal</h5>
 
+<<<<<<< HEAD:views/submit.html
             <div class="row">
                 <form class="col s3">
                     <textarea id="textarea1" class="materialize-textarea"></textarea>
@@ -160,6 +295,41 @@
             <!-- Custom Script -->
 
             <script src="" type="text/javascript"></script>
+=======
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Brought To You By</h5>
+                    <ul>
+                        <li>
+                            <a class="white-text text-lighten-1" href="https://github.com/stolbert3">Sydney Tolbert</a>
+                        </li>
+                        <li>
+                            <a class="white-text text-lighten-1" href="https://github.com/Miked13">Mike D.</a>
+                        </li>
+                        <li>
+                            <a class="white-text text-lighten-1" href="https://github.com/Sritchey1">Scott Ritchey</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Custom Script -->
+
+    <script src="../../js/index.js" type="text/javascript"></script>
+
+
+>>>>>>> fa0d3376ca1af43491ee82c194b40bb4de03bf89:public/views/layouts/submit.html
 
 </body>
 
