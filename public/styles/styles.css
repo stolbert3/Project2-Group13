@@ -21,7 +21,7 @@ p, .card-title, .card-action {
 
   
 }
-#submit_container{
+#submit_container, #recipe_container{
   background-image: url(../views/images/empty_kitchen.jpeg);
 
   /* Full height */
