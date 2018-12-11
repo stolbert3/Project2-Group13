@@ -2,7 +2,19 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+/* background photo for search page */
+.card-image {
+  background-image: url("../views/images/m&p.jpg");
 
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
 
 /* background photo for search page */
 #search_container {
