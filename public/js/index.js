@@ -1,19 +1,19 @@
 
 // Get references to page elements and set variables for all individual data that needs to be stored
-var allergyDairy = $("#dairy");
-var allergyEggs = $("#eggs");
-var allergyGluten = $("#gluten");
-var allergyNutsOther = $("#nutsOther");
-var allergyPeanuts = $("#peanuts");
-var allergyShellfish = $("#shellfish");
-var courseType = $("#courseType");
-var cuisineType = $("#cuisineType");
-var dishName = $("#dishName");
-var measureLiquids = $("#measureLiquids");
-var measureSolids = $("#measureSolids");
-var recipeAmount = $("#textAreaAmount");
-var recipeIngredient = $("#textAreaIngredient");
-var recipeInstructions = $("#textAreaInstructions");
+var allergyDairy = $("#dairy").val();
+var allergyEggs = $("#eggs").val();
+var allergyGluten = $("#gluten").val();
+var allergyNutsOther = $("#nutsOther").val();
+var allergyPeanuts = $("#peanuts").val();
+var allergyShellfish = $("#shellfish").val();
+var courseType = $("#courseType").val();
+var cuisineType = $("#cuisineType").val();
+var dishName = $("#dishName").val();
+var measureLiquids = $("#measureLiquids").val();
+var measureSolids = $("#measureSolids").val();
+var recipeAmount = $("#textAreaAmount").val();
+var recipeIngredient = $("#textAreaIngredient").val();
+var recipeInstructions = $("#textAreaInstructions").val();
 
 // --------------------------- API object -------------------------------//
 

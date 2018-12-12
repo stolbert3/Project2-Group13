@@ -19,7 +19,8 @@ CREATE TABLE allergens (
     peanuts BOOLEAN NOT NULL DEFAULT 0,
     nuts_other BOOLEAN NOT NULL DEFAULT 0,
     dairy BOOLEAN NOT NULL DEFAULT 0,
-    eggs BOOLEAN NOT NULL DEFAULT 0
+    eggs BOOLEAN NOT NULL DEFAULT 0,
+    PRIMARY KEY (recipe_id)
 );
 
 CREATE TABLE ingredient_list (

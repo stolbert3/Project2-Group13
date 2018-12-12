@@ -1,7 +1,6 @@
 require("dotenv").config();
 var express = require("express");
 var app = express();
-var path = require("path");
 
 
 var db = require("./models");
@@ -13,7 +12,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(express.static(__dirname + '/views'));
-app.use(express.static(path.join(__dirname, '/views')))
 
 
 // Routes
@@ -32,7 +30,7 @@ if (process.env.NODE_ENV === "test") {
 db.sequelize.sync(syncOptions).then(function() {
   app.listen(process.env.port || 3000, function() {
     console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser."
+      "==> 🌎  Listening on port 3000. Visit http://localhost:3000/ in your browser."
     );
   });
 });
